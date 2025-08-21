@@ -3,722 +3,1043 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halo Line — Peace of mind, one call away</title>
-    <meta name="description" content="The smartest way to protect your parents from scams. Real humans, instant verification, complete transparency.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="modern-styles.css">
+    <title>Halo Line - One Button Tech Support for Your Parents</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #1a1f36;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1500;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            top: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1f36;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1a1f36;
+        }
+
+        .nav-cta {
+            background: #5046e5;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: #4338ca;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 16px rgba(80, 70, 229, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: #1a1f36;
+            letter-spacing: -1px;
+        }
+
+        .hero-text h1 .highlight {
+            color: #5046e5;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: #6b7280;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .hero-benefits {
+            background: #f9fafb;
+            border-left: 4px solid #5046e5;
+            padding: 20px;
+            margin-bottom: 32px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #4b5563;
+        }
+
+        .benefit-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .benefit-check {
+            color: #10b981;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .waitlist-form {
+            max-width: 480px;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .form-group input {
+            flex: 1;
+            padding: 16px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #5046e5;
+            box-shadow: 0 0 0 3px rgba(80, 70, 229, 0.1);
+        }
+
+        .form-group button {
+            background: #5046e5;
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group button:hover {
+            background: #4338ca;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(80, 70, 229, 0.4);
+        }
+
+        .form-meta {
+            display: flex;
+            gap: 24px;
+            font-size: 14px;
+            color: #6b7280;
+            flex-wrap: wrap;
+        }
+
+        /* Phone Visual */
+        .phone-visual {
+            position: relative;
+        }
+
+        .phone-device {
+            width: 380px;
+            height: 760px;
+            background: #000;
+            border-radius: 36px;
+            padding: 8px;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 28px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* iOS Style Status Bar */
+        .ios-status-bar {
+            background: #f5f5f7;
+            padding: 8px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .ios-time {
+            color: #000;
+        }
+
+        .ios-indicators {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .signal-bars {
+            display: flex;
+            gap: 2px;
+            align-items: flex-end;
+        }
+
+        .bar {
+            width: 3px;
+            background: #000;
+            border-radius: 1px;
+        }
+
+        .bar:nth-child(1) { height: 4px; }
+        .bar:nth-child(2) { height: 6px; }
+        .bar:nth-child(3) { height: 8px; }
+        .bar:nth-child(4) { height: 10px; }
+
+        .battery {
+            width: 24px;
+            height: 12px;
+            border: 1px solid #000;
+            border-radius: 2px;
+            position: relative;
+            padding: 1px;
+        }
+
+        .battery::after {
+            content: '';
+            position: absolute;
+            right: -3px;
+            top: 3px;
+            width: 2px;
+            height: 6px;
+            background: #000;
+            border-radius: 0 1px 1px 0;
+        }
+
+        .battery-fill {
+            width: 70%;
+            height: 100%;
+            background: #000;
+            border-radius: 1px;
+        }
+
+        /* Call Screen */
+        .call-screen {
+            height: calc(100% - 28px);
+            background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 24px;
+            position: relative;
+        }
+
+        .call-info {
+            text-align: center;
+            color: white;
+        }
+
+        .call-status {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .support-agent-avatar {
+            width: 120px;
+            height: 120px;
+            background: #5046e5;
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 8px 32px rgba(80, 70, 229, 0.4);
+        }
+
+        .agent-name {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+
+        .agent-title {
+            font-size: 16px;
+            color: #999;
+            margin-bottom: 32px;
+        }
+
+        .call-timer {
+            font-size: 18px;
+            color: #10b981;
+            font-weight: 500;
+        }
+
+        /* Audio Visualizer */
+        .audio-visualizer {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+        }
+
+        .audio-bar {
+            width: 4px;
+            background: #5046e5;
+            border-radius: 2px;
+            animation: audioWave 1s ease-in-out infinite;
+        }
+
+        .audio-bar:nth-child(1) { height: 20px; animation-delay: 0s; }
+        .audio-bar:nth-child(2) { height: 30px; animation-delay: 0.1s; }
+        .audio-bar:nth-child(3) { height: 40px; animation-delay: 0.2s; }
+        .audio-bar:nth-child(4) { height: 35px; animation-delay: 0.3s; }
+        .audio-bar:nth-child(5) { height: 25px; animation-delay: 0.4s; }
+        .audio-bar:nth-child(6) { height: 30px; animation-delay: 0.5s; }
+        .audio-bar:nth-child(7) { height: 20px; animation-delay: 0.6s; }
+
+        @keyframes audioWave {
+            0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
+            50% { opacity: 1; transform: scaleY(1); }
+        }
+
+        /* Call Actions */
+        .call-actions {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .call-btn {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .call-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .mute-btn {
+            background: #4b5563;
+        }
+
+        .speaker-btn {
+            background: #4b5563;
+        }
+
+        .end-call-btn {
+            background: #ef4444;
+            width: 72px;
+            height: 72px;
+            font-size: 28px;
+        }
+
+        /* Help Overlay */
+        .help-overlay {
+            position: absolute;
+            bottom: 120px;
+            left: 24px;
+            right: 24px;
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .help-overlay h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1f36;
+            margin-bottom: 12px;
+        }
+
+        .current-issue {
+            background: #f9fafb;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #4b5563;
+            margin-bottom: 8px;
+        }
+
+        .resolution-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #10b981;
+            font-weight: 500;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Common Issues */
+        .common-issues {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1f36;
+        }
+
+        .section-header p {
+            font-size: 20px;
+            color: #6b7280;
+        }
+
+        .issues-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .issue-card {
+            background: #f9fafb;
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .issue-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .issue-icon {
+            width: 64px;
+            height: 64px;
+            background: #ede9fe;
+            border-radius: 16px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: #5046e5;
+        }
+
+        .issue-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1f36;
+        }
+
+        .issue-quote {
+            font-style: italic;
+            color: #6b7280;
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .issue-solution {
+            color: #5046e5;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #5046e5;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1f36;
+        }
+
+        .step p {
+            color: #6b7280;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .feature-item {
+            padding: 32px;
+            background: #f9fafb;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: #5046e5;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .feature-item h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1f36;
+        }
+
+        .feature-item p {
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            padding: 24px;
+            background: white;
+            border-radius: 12px;
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1f36;
+        }
+
+        .faq-item p {
+            color: #6b7280;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #5046e5 0%, #7c3aed 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .final-cta h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .final-cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .final-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: #1a1f36;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-disclaimer {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .phone-visual {
+                order: -1;
+            }
+
+            .issues-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-device {
+                width: 320px;
+                height: 640px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Floating Orb Background -->
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    
-    <!-- Modern Navbar -->
-    <nav class="nav-modern">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <div class="brand-icon">
-                    <div class="pulse-ring"></div>
-                    <div class="pulse-ring"></div>
-                    <div class="pulse-dot"></div>
-                </div>
-                <span class="brand-text">Halo Line</span>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Halo Line</a>
+            <div class="nav-links">
+                <a href="#issues">Common Issues</a>
+                <a href="#how">How it works</a>
+                <a href="#features">Features</a>
+                <a href="#faq">FAQ</a>
+                <a href="#" class="nav-cta">Join Waitlist</a>
             </div>
-            
-            <div class="nav-menu">
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#how" class="nav-link">How it works</a>
-                <a href="#pricing" class="nav-link">Pricing</a>
-                <div class="nav-divider"></div>
-                <button class="btn-glass">Get Early Access</button>
-            </div>
-            
-            <button class="theme-toggle" aria-label="Toggle theme">
-                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero-modern">
-        <div class="hero-container">
-            <div class="hero-content">
-                
-                <h1 class="hero-title">
-                    <span class="title-line">Finally, peace of mind when</span>
-                    <span class="title-line gradient-text">Mom answers unknown calls</span>
-                </h1>
-                
-                <p class="hero-subtitle">
-                    24/7 scam protection + tech support for elderly parents.<br>
-                    One number they'll remember. One worry off your mind.
-                </p>
-                
-                <div class="hero-cta">
-                    <div class="social-proof-bar">
-                        <div class="family-avatars">
-                            <span class="avatar"></span>
-                            <span class="avatar"></span>
-                            <span class="avatar"></span>
-                            <span class="avatar"></span>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1>One button for <span class="highlight">every tech problem</span> your parents face.</h1>
+                    <p>WiFi down? TV not working? Suspicious call? Your parents press one button, we handle everything. You get peace of mind.</p>
+                    
+                    <div class="hero-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <span><strong>WiFi & Internet issues</strong> fixed in minutes</span>
                         </div>
-                        <span class="proof-text">Join 3,247 families already protected</span>
-                    </div>
-                    
-                    <form class="modern-form" id="hero-form">
-                        <div class="form-field">
-                            <input type="email" placeholder="Enter your email" required class="email-input">
-                            <button type="submit" class="btn-primary">
-                                <span>PROTECT MY PARENTS</span>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                </svg>
-                            </button>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <span><strong>TV & streaming problems</strong> solved patiently</span>
                         </div>
-                    </form>
-                    
-                    <div class="instant-value">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                        </svg>
-                        <span>Get our Scam Prevention Guide instantly</span>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <span><strong>Scam calls blocked</strong> automatically</span>
+                        </div>
                     </div>
                     
-                    <div class="pricing-urgency">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                        <span>Early Access Pricing: <strong>$19/month</strong> <small>(Increases to $29 at public launch)</small></span>
-                    </div>
-                    
-                    <div class="trust-badges-hero">
-                        <span class="badge-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            HIPAA Compliant
-                        </span>
-                        <span class="badge-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Family-Founded
-                        </span>
-                        <span class="badge-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            Cancel Anytime
-                        </span>
+                    <div class="waitlist-form">
+                        <form class="form-group">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">JOIN WAITLIST</button>
+                        </form>
+                        
+                        <div class="form-meta">
+                            <span>Works with iPhone & Android</span>
+                            <span>• US-based team</span>
+                            <span>• Launching 9am-9pm</span>
+                            <span>• Not a 911 service</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="hero-visual">
-                <div class="device-mockup">
-                    <div class="device-screen">
-                        <div class="screen-content">
-                            <div class="scam-alert">
-                                <div class="alert-header">Potential Scam Call Detected</div>
-                                
-                                <div class="warning-icon">
-                                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-                                        <line x1="12" y1="9" x2="12" y2="13"/>
-                                        <line x1="12" y1="17" x2="12.01" y2="17"/>
-                                    </svg>
+
+                <div class="phone-visual">
+                    <div class="phone-device">
+                        <div class="phone-screen">
+                            <div class="ios-status-bar">
+                                <span class="ios-time">2:34 PM</span>
+                                <div class="ios-indicators">
+                                    <div class="signal-bars">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                    <span style="font-size: 10px;">5G</span>
+                                    <div class="battery">
+                                        <div class="battery-fill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="call-screen">
+                                <div class="call-info">
+                                    <div class="call-status">Connected to Halo Line</div>
+                                    <div class="support-agent-avatar">HL</div>
+                                    <div class="agent-name">Sarah from Halo Line</div>
+                                    <div class="agent-title">Tech Support Specialist</div>
+                                    <div class="call-timer">3:42</div>
                                 </div>
                                 
-                                <div class="scam-details">
-                                    <div class="scam-type">IRS Impersonation Scam</div>
-                                    <div class="scam-status">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                            <polyline points="22 4 12 14.01 9 11.01"/>
-                                        </svg>
-                                        Blocked automatically
+                                <div class="audio-visualizer">
+                                    <div class="audio-bar"></div>
+                                    <div class="audio-bar"></div>
+                                    <div class="audio-bar"></div>
+                                    <div class="audio-bar"></div>
+                                    <div class="audio-bar"></div>
+                                    <div class="audio-bar"></div>
+                                    <div class="audio-bar"></div>
+                                </div>
+                                
+                                <div class="help-overlay">
+                                    <h4>Currently Helping With:</h4>
+                                    <div class="current-issue">"My WiFi stopped working and I can't watch my shows"</div>
+                                    <div class="resolution-status">
+                                        <div class="status-dot"></div>
+                                        Walking through router restart
                                     </div>
                                 </div>
                                 
-                                <button class="halo-help-btn">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                                    </svg>
-                                    Call Halo Line for Help
-                                </button>
+                                <div class="call-actions">
+                                    <div class="call-btn mute-btn">🔇</div>
+                                    <div class="call-btn end-call-btn">✕</div>
+                                    <div class="call-btn speaker-btn">🔊</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="device-notch"></div>
-                    
-                    <div class="pain-callouts">
-                        <div class="callout callout-1">
-                            <strong>$2,400 saved</strong> from wire transfer scam
-                        </div>
-                        <div class="callout callout-2">
-                            <strong>47 scam calls</strong> blocked this month
-                        </div>
-                        <div class="callout callout-3">
-                            <strong>5 minutes</strong> to fix iPad issue
-                        </div>
-                    </div>
                 </div>
-                
             </div>
         </div>
     </section>
 
-
-    <!-- Problem Section -->
-    <section class="problem-modern">
-        <div class="section-container">
+    <!-- Common Issues Section -->
+    <section class="common-issues" id="issues">
+        <div class="container">
             <div class="section-header">
-                <h2 class="section-title">
-                    <span class="title-small">The Problem</span>
-                    <span class="title-large">Why this matters</span>
-                </h2>
+                <h2>The problems we solve every day</h2>
+                <p>Real issues your parents face, handled with patience and care.</p>
             </div>
             
-            <div class="problem-grid">
-                <div class="problem-card" data-aos="fade-up">
-                    <div class="card-number">01</div>
-                    <h3>Is that really the bank calling?</h3>
-                    <p>We check unknown callers so your parents don't have to guess.</p>
+            <div class="issues-grid">
+                <div class="issue-card">
+                    <div class="issue-icon">W</div>
+                    <h3>WiFi & Internet</h3>
+                    <p class="issue-quote">"The internet stopped working"</p>
+                    <p class="issue-solution">We'll restart routers, check connections, and get them back online</p>
                 </div>
                 
-                <div class="problem-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-number">02</div>
-                    <h3>Tech headaches that drag on</h3>
-                    <p>Patient, plain-language help—no jargon, no rushing.</p>
+                <div class="issue-card">
+                    <div class="issue-icon">TV</div>
+                    <h3>TV & Streaming</h3>
+                    <p class="issue-quote">"I can't find my shows"</p>
+                    <p class="issue-solution">Navigate channels, fix remotes, setup streaming apps</p>
                 </div>
                 
-                <div class="problem-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-number">03</div>
-                    <h3>You can't always be there</h3>
-                    <p>See a simple activity feed of what we handled.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section class="solution-modern">
-        <div class="section-container">
-            <div class="solution-grid">
-                <div class="solution-content">
-                    <h2 class="solution-title">
-                        <span class="title-small">The Solution</span>
-                        <span class="title-large">Your parents get ONE button for everything</span>
-                    </h2>
-                    
-                    <div class="feature-list">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                </svg>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Instant verification</h4>
-                                <p>We check every suspicious call in real-time before your parents answer.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-                                </svg>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Human support</h4>
-                                <p>Friendly experts who speak their language, available 24/7.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
-                                    <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
-                                </svg>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Complete transparency</h4>
-                                <p>See everything we handle through your family dashboard.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="solution-visual">
-                    <div class="dashboard-preview">
-                        <div class="dashboard-header">
-                            <div class="header-title">Family Dashboard</div>
-                            <div class="header-date">Today</div>
-                        </div>
-                        
-                        <div class="stat-cards">
-                            <div class="stat-card">
-                                <div class="stat-number">—</div>
-                                <div class="stat-label">Scams blocked</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">—</div>
-                                <div class="stat-label">Calls verified</div>
-                            </div>
-                        </div>
-                        
-                        <div class="activity-list">
-                            <div class="activity-item">
-                                <div class="activity-icon success">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"/>
-                                </svg>
-                            </div>
-                                <div class="activity-content">
-                                    <div class="activity-title">Bank call verified</div>
-                                    <div class="activity-time">2 hours ago</div>
-                                </div>
-                            </div>
-                            <div class="activity-item">
-                                <div class="activity-icon warning">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-                                    <line x1="12" y1="9" x2="12" y2="13"/>
-                                    <line x1="12" y1="17" x2="12.01" y2="17"/>
-                                </svg>
-                            </div>
-                                <div class="activity-content">
-                                    <div class="activity-title">Suspicious IRS call blocked</div>
-                                    <div class="activity-time">5 hours ago</div>
-                                </div>
-                            </div>
-                            <div class="activity-item">
-                                <div class="activity-icon info">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="12" y1="16" x2="12" y2="12"/>
-                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
-                                </svg>
-                            </div>
-                                <div class="activity-content">
-                                    <div class="activity-title">Helped reset email password</div>
-                                    <div class="activity-time">Yesterday</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="issue-card">
+                    <div class="issue-icon">PW</div>
+                    <h3>Passwords & Accounts</h3>
+                    <p class="issue-quote">"It says my password is wrong"</p>
+                    <p class="issue-solution">Reset passwords, recover accounts, manage logins safely</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- How It Works -->
-    <section id="how" class="how-modern">
-        <div class="section-container">
-            <div class="section-header center">
-                <h2 class="section-title">
-                    <span class="title-small">How it works</span>
-                    <span class="title-large">Three steps to peace of mind</span>
-                </h2>
+    <section class="how-it-works" id="how">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simpler than teaching them to text</h2>
             </div>
             
-            <div class="steps-modern">
-                <div class="step-card">
-                    <div class="step-icon">
-                        <div class="icon-bg"></div>
-                        <span>1</span>
-                    </div>
-                    <h3>Quick setup</h3>
-                    <p>Add our button to their phone. No apps, no passwords, no confusion.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>One-time setup</h3>
+                    <p>Add our speed dial button to their phone. We'll help remotely.</p>
                 </div>
                 
-                <div class="step-connector"></div>
-                
-                <div class="step-card">
-                    <div class="step-icon">
-                        <div class="icon-bg"></div>
-                        <span>2</span>
-                    </div>
-                    <h3>Instant help</h3>
-                    <p>They press once, we answer. Real humans who verify calls and solve problems.</p>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>They press, we answer</h3>
+                    <p>Any tech problem, suspicious call, or confusion - we're there in seconds.</p>
                 </div>
                 
-                <div class="step-connector"></div>
-                
-                <div class="step-card">
-                    <div class="step-icon">
-                        <div class="icon-bg"></div>
-                        <span>3</span>
-                    </div>
-                    <h3>Stay informed</h3>
-                    <p>Get updates on what we handled. No more constant check-ins.</p>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>You stay informed</h3>
+                    <p>Dashboard shows what we helped with, no surprises.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Grid -->
-    <section id="features" class="features-modern">
-        <div class="section-container">
-            <div class="section-header center">
-                <h2 class="section-title">
-                    <span class="title-small">Features</span>
-                    <span class="title-large">Everything they need</span>
-                </h2>
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Complete tech support, not just another app</h2>
             </div>
             
-            <div class="features-bento">
-                <div class="bento-item large">
-                    <div class="bento-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
-                    <h3>Scam Shield</h3>
-                    <p>We verify suspicious callers in real time.</p>
-                    <div class="bento-visual">
-                        <div class="scan-line"></div>
-                        <div class="scan-result">Threat detected</div>
-                    </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">01</div>
+                    <h4>24/7 Tech Help</h4>
+                    <p>WiFi, TV, devices, printers - we handle it all</p>
                 </div>
                 
-                <div class="bento-item">
-                    <div class="bento-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                    </div>
-                    <h3>Always Available</h3>
-                    <p>Live support during launch hours; 24/7 coming soon.</p>
+                <div class="feature-item">
+                    <div class="feature-icon">02</div>
+                    <h4>Scam Protection</h4>
+                    <p>Verify suspicious calls in real-time</p>
                 </div>
                 
-                <div class="bento-item">
-                    <div class="bento-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                        </svg>
-                    </div>
-                    <h3>Tech Made Simple</h3>
-                    <p>Clear help for phones, tablets, email, Wi-Fi, etc.</p>
+                <div class="feature-item">
+                    <div class="feature-icon">03</div>
+                    <h4>Password Management</h4>
+                    <p>Secure help with forgotten passwords</p>
                 </div>
                 
-                <div class="bento-item tall">
-                    <div class="bento-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="20" x2="12" y2="10"/>
-                            <line x1="18" y1="20" x2="18" y2="4"/>
-                            <line x1="6" y1="20" x2="6" y2="16"/>
-                        </svg>
-                    </div>
-                    <h3>Family Connected</h3>
-                    <p>Private activity timeline and alerts.</p>
-                    <div class="mini-chart">
-                        <div class="chart-bar" style="height: 40%"></div>
-                        <div class="chart-bar" style="height: 70%"></div>
-                        <div class="chart-bar" style="height: 50%"></div>
-                        <div class="chart-bar" style="height: 90%"></div>
-                    </div>
+                <div class="feature-item">
+                    <div class="feature-icon">04</div>
+                    <h4>Patient Experts</h4>
+                    <p>Trained to work with seniors</p>
                 </div>
                 
-                <div class="bento-item">
-                    <div class="bento-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-                            <path d="M12 6v6l4 2"/>
-                        </svg>
-                    </div>
-                    <h3>Memory Support</h3>
-                    <p>We remember preferences and common issues.</p>
+                <div class="feature-item">
+                    <div class="feature-icon">05</div>
+                    <h4>Family Dashboard</h4>
+                    <p>See all support interactions</p>
                 </div>
                 
-                <div class="bento-item">
-                    <div class="bento-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                            <path d="M7 11V7a5 5 0 0110 0v4"/>
-                        </svg>
-                    </div>
-                    <h3>Emergency Ready</h3>
-                    <p>We follow your plan (not a 911 service).</p>
+                <div class="feature-item">
+                    <div class="feature-icon">06</div>
+                    <h4>No Apps Required</h4>
+                    <p>Just one phone number to remember</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
-    <section id="pricing" class="pricing-modern">
-        <div class="section-container">
-            <div class="section-header center">
-                <h2 class="section-title">
-                    <span class="title-small">Pricing</span>
-                    <span class="title-large">Simple, transparent pricing</span>
-                </h2>
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Questions from adult children like you</h2>
             </div>
             
-            <div class="pricing-toggle">
-                <span class="toggle-label">Monthly</span>
-                <button class="toggle-switch" aria-label="Toggle pricing">
-                    <span class="toggle-slider"></span>
-                </button>
-                <span class="toggle-label">Annual <span class="discount-badge">Save 20%</span></span>
-            </div>
-            
-            <div class="pricing-cards-modern">
-                <div class="price-card">
-                    <div class="price-header">
-                        <h3>Essential</h3>
-                        <div class="price-amount">
-                            <span class="currency">$</span>
-                            <span class="amount">19</span>
-                            <span class="period">/month</span>
-                        </div>
-                    </div>
-                    
-                    <ul class="price-features">
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>24/7 scam verification</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Basic tech support</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Family dashboard</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Email alerts</span>
-                        </li>
-                    </ul>
-                    
-                    <button class="btn-outline">Get Started</button>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What tech problems do you actually solve?</h3>
+                    <p>Everything from WiFi and TV issues to email problems, password resets, printer setup, video calls, and suspicious call verification. If it plugs in or connects, we help.</p>
                 </div>
                 
-                <div class="price-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <div class="price-header">
-                        <h3>Premium</h3>
-                        <div class="price-amount">
-                            <span class="currency">$</span>
-                            <span class="amount">39</span>
-                            <span class="period">/month</span>
-                        </div>
-                    </div>
-                    
-                    <ul class="price-features">
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Everything in Essential</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Advanced tech support</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Video check-ins</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Priority response</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Multiple family members</span>
-                        </li>
-                    </ul>
-                    
-                    <button class="btn-primary">Get Started</button>
+                <div class="faq-item">
+                    <h3>How is this different from calling me?</h3>
+                    <p>We're available 24/7, trained in elder tech support, and infinitely patient. You get your time back, they get immediate help.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Will my parents actually use this?</h3>
+                    <p>Yes. It's just a phone call - the one thing they already know how to do. No apps, no passwords.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What about scam calls?</h3>
+                    <p>We verify suspicious calls in real-time and block scams before damage occurs. It's protection built into the service.</p>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.875rem;">Final pricing at launch. Waitlist gets founding pricing.</p>
         </div>
     </section>
-
 
     <!-- Final CTA -->
-    <section class="cta-modern">
-        <div class="section-container">
-            <div class="cta-content">
-                <h2 class="cta-title">
-                    Stop worrying. Start protecting.
-                </h2>
-                <p class="cta-subtitle">
-                    Join families getting peace of mind with Halo Line.
-                </p>
-                
-                <form class="modern-form cta-form" id="cta-form">
-                    <div class="form-field">
-                        <input type="email" placeholder="Enter your email" required class="email-input">
-                        <button type="submit" class="btn-primary">
-                            <span>PROTECT MY PARENTS</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            </svg>
-                        </button>
-                    </div>
-                </form>
-                
-                <div class="cta-features">
-                    <div class="cta-feature">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>Simple setup</span>
-                    </div>
-                    <div class="cta-feature">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>Cancel anytime</span>
-                    </div>
-                    <div class="cta-feature">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>Privacy respected</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="faq-section" style="padding: 80px 0; background: var(--bg-secondary);">
-        <div class="section-container">
-            <div class="section-header center">
-                <h2 class="section-title">
-                    <span class="title-small">FAQ</span>
-                    <span class="title-large">Common questions answered</span>
-                </h2>
-            </div>
+    <section class="final-cta">
+        <div class="container">
+            <h2>Stop being the family IT department.</h2>
+            <p>Join the waitlist and be first to know when we launch.</p>
             
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div style="background: var(--bg-primary); border-radius: 12px; padding: 24px; margin-bottom: 16px;">
-                    <h3 style="margin-bottom: 12px;">Will my parents actually use this?</h3>
-                    <p style="color: var(--text-secondary);">Yes. It's a single contact/button—no apps or passwords.</p>
-                </div>
-                
-                <div style="background: var(--bg-primary); border-radius: 12px; padding: 24px; margin-bottom: 16px;">
-                    <h3 style="margin-bottom: 12px;">What scams do you handle?</h3>
-                    <p style="color: var(--text-secondary);">Tech support, bank/IRS spoofing, Medicare, "grandparent," and more.</p>
-                </div>
-                
-                <div style="background: var(--bg-primary); border-radius: 12px; padding: 24px; margin-bottom: 16px;">
-                    <h3 style="margin-bottom: 12px;">Do we install anything?</h3>
-                    <p style="color: var(--text-secondary);">We set up a dedicated contact/button on their phone in a few minutes.</p>
-                </div>
-                
-                <div style="background: var(--bg-primary); border-radius: 12px; padding: 24px; margin-bottom: 16px;">
-                    <h3 style="margin-bottom: 12px;">Does this work across states?</h3>
-                    <p style="color: var(--text-secondary);">Yes—remote-first with a family activity feed.</p>
-                </div>
-                
-                <div style="background: var(--bg-primary); border-radius: 12px; padding: 24px; margin-bottom: 16px;">
-                    <h3 style="margin-bottom: 12px;">Are you 24/7?</h3>
-                    <p style="color: var(--text-secondary);">We're launching 9am–9pm and expanding to 24/7.</p>
-                </div>
-                
-                <div style="background: var(--bg-primary); border-radius: 12px; padding: 24px; margin-bottom: 16px;">
-                    <h3 style="margin-bottom: 12px;">Is this emergency response?</h3>
-                    <p style="color: var(--text-secondary);">No—this is not 911.</p>
-                </div>
+            <div class="final-form">
+                <form class="form-group">
+                    <input type="email" placeholder="Enter your email" required style="background: white; color: #1a1f36;">
+                    <button type="submit">JOIN WAITLIST</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer-modern">
-        <div class="footer-container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <div class="brand-icon">
-                        <div class="pulse-dot"></div>
-                    </div>
-                    <span class="brand-text">Halo Line</span>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Product</h4>
-                        <a href="#features">Features</a>
-                        <a href="#pricing">Pricing</a>
-                        <a href="#how">How it works</a>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="/about">About</a>
-                        <a href="/blog">Blog</a>
-                        <a href="/careers">Careers</a>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Support</h4>
-                        <a href="/help">Help Center</a>
-                        <a href="/contact">Contact</a>
-                        <a href="/status">Status</a>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <a href="/privacy">Privacy</a>
-                        <a href="/terms">Terms</a>
-                        <a href="/security">Security</a>
-                    </div>
-                </div>
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">FAQ</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Halo Line. All rights reserved.</p>
-                <p class="footer-disclaimer">Halo Line is not a 911 or emergency service. Works with iPhone & Android. US-based team.</p>
+            <div class="footer-disclaimer">
+                Halo Line is not a 911 or emergency service. © 2024 Halo Line Inc.
             </div>
         </div>
     </footer>
-
-    <script src="modern-script.js"></script>
 </body>
 </html>

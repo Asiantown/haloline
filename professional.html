@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halo Line - Sleep Soundly Knowing Mom Won't Fall for Scam Calls</title>
+    <meta name="description" content="24/7 scam protection and tech support through one simple button. No apps, no passwords, no confusion.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --blue: #3b82f6;
+            --blue-light: #60a5fa;
+            --green: #10b981;
+            --red: #ef4444;
+            --coral: #fbbf24;
+            --coral-light: #fcd34d;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --white: #ffffff;
+            --max-width: 1200px;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--navy);
+        }
+        
+        .nav-cta {
+            background: var(--blue);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background: var(--blue-light);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 100px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(251, 191, 36, 0.05) 100%);
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-text p {
+            font-size: 20px;
+            color: var(--gray);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        
+        .social-proof {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 16px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .social-proof-text {
+            flex: 1;
+        }
+        
+        .social-proof-text .count {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 18px;
+        }
+        
+        .social-proof-text .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+        }
+        
+        .stars {
+            color: var(--coral);
+            letter-spacing: 2px;
+        }
+        
+        .testimonial {
+            padding: 20px;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+            color: var(--white);
+            border-radius: 12px;
+            margin-bottom: 32px;
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 48px;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            opacity: 0.9;
+        }
+        
+        .urgency-badge {
+            display: inline-block;
+            padding: 12px 20px;
+            background: var(--red);
+            color: var(--white);
+            border-radius: 8px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .cta-form {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-header {
+            margin-bottom: 24px;
+        }
+        
+        .form-header h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .value-prop {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--gray-light);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .value-prop-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+        }
+        
+        .value-prop-text {
+            flex: 1;
+        }
+        
+        .value-prop-text .title {
+            font-weight: 600;
+            color: var(--navy);
+        }
+        
+        .value-prop-text .subtitle {
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid var(--gray-light);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+        
+        .cta-button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+        
+        .pricing-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--green), var(--green));
+            color: var(--white);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .pricing-info .price {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .pricing-info .regular {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        
+        .pricing-info .savings {
+            font-size: 14px;
+        }
+        
+        .trust-badges {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-light);
+        }
+        
+        .trust-badge {
+            flex: 1;
+            text-align: center;
+            font-size: 12px;
+            color: var(--gray);
+        }
+        
+        .trust-badge-icon {
+            width: 24px;
+            height: 24px;
+            margin: 0 auto 4px;
+            color: var(--green);
+        }
+        
+        /* Phone Mockup */
+        .hero-visual {
+            position: relative;
+        }
+        
+        .phone-mockup {
+            width: 320px;
+            height: 640px;
+            background: var(--navy);
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .phone-screen {
+            background: var(--white);
+            height: 100%;
+            border-radius: 28px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .scam-alert {
+            background: var(--red);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .scam-alert-header {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .warning-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .scam-details {
+            background: var(--white);
+            padding: 24px;
+        }
+        
+        .scam-type {
+            background: var(--gray-light);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .scam-type-label {
+            font-size: 12px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        
+        .scam-type-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        
+        .scam-amount {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
+            border: 2px solid var(--red);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        
+        .scam-amount-label {
+            font-size: 14px;
+            color: var(--red);
+            margin-bottom: 4px;
+        }
+        
+        .scam-amount-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--red);
+        }
+        
+        .blocked-status {
+            background: var(--green);
+            color: var(--white);
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .check-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .call-support {
+            background: var(--navy);
+            color: var(--white);
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .call-support:hover {
+            background: var(--navy-light);
+        }
+        
+        /* Floating Benefits */
+        .floating-benefits {
+            position: absolute;
+            top: 50%;
+            left: -100px;
+            right: -100px;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        
+        .benefit-card {
+            position: absolute;
+            background: var(--white);
+            padding: 12px 16px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .benefit-card:nth-child(1) {
+            top: 0;
+            left: -20px;
+            animation-delay: 0s;
+        }
+        
+        .benefit-card:nth-child(2) {
+            top: 50%;
+            right: -20px;
+            animation-delay: 1s;
+        }
+        
+        .benefit-card:nth-child(3) {
+            bottom: 0;
+            left: -20px;
+            animation-delay: 2s;
+        }
+        
+        .benefit-card .amount {
+            color: var(--green);
+            font-weight: 700;
+        }
+        
+        .benefit-card .description {
+            color: var(--gray);
+            font-size: 12px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--navy);
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            border: 2px solid var(--gray-light);
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            border-color: var(--blue);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: linear-gradient(180deg, var(--gray-light) 0%, var(--white) 100%);
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 24px;
+        }
+        
+        .step-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+        
+        .step-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .faq-item {
+            background: var(--gray-light);
+            padding: 24px;
+            border-radius: 12px;
+        }
+        
+        .faq-item h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+        
+        .faq-item p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .final-cta h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        
+        .final-cta p {
+            font-size: 20px;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+        
+        .final-cta .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: var(--white);
+            color: var(--blue);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .final-cta .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero-text h1 {
+                font-size: 32px;
+            }
+            
+            .phone-mockup {
+                width: 280px;
+                height: 560px;
+            }
+            
+            .floating-benefits {
+                display: none;
+            }
+            
+            .features-grid,
+            .steps-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">Halo Line</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="#cta" class="nav-cta">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Finally, sleep soundly knowing Mom won't fall for scam calls</h1>
+                    <p>Your parents get ONE red button for help. Our trained experts answer every call, block scams before damage occurs, and send you instant updates. No apps, no passwords, no confusion.</p>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-text">Finally, I don't panic when unknown numbers call Mom!</div>
+                        <div class="testimonial-author">- Sarah K., daughter of Halo Line user</div>
+                    </div>
+                    
+                    <div class="social-proof">
+                        <div class="social-proof-text">
+                            <div class="count">Join 3,247+ families already protected</div>
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.9/5 from adult children</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="urgency-badge">Only 847 Early Access spots remaining</div>
+                    
+                    <div class="cta-form" id="cta">
+                        <div class="form-header">
+                            <h3>Secure Your Spot</h3>
+                        </div>
+                        
+                        <div class="value-prop">
+                            <div class="value-prop-icon">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.669 0-3.218.51-4.5 1.385V4.804z"/>
+                                </svg>
+                            </div>
+                            <div class="value-prop-text">
+                                <div class="title">Get Ultimate Scam Prevention Guide</div>
+                                <div class="subtitle">47-page PDF ($19 value) instantly</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <button class="cta-button">Protect My Parents</button>
+                        
+                        <div class="pricing-info">
+                            <div>
+                                <div class="price">$19/month <span class="regular">$29</span></div>
+                                <div class="savings">Price locked for life</div>
+                            </div>
+                            <div class="savings">Save $120/year</div>
+                        </div>
+                        
+                        <div class="trust-badges">
+                            <div class="trust-badge">
+                                <svg class="trust-badge-icon" width="24" height="24" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <div>HIPAA Compliant</div>
+                            </div>
+                            <div class="trust-badge">
+                                <svg class="trust-badge-icon" width="24" height="24" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <div>30-Day Guarantee</div>
+                            </div>
+                            <div class="trust-badge">
+                                <svg class="trust-badge-icon" width="24" height="24" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                                <div>Cancel Anytime</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="scam-alert">
+                                <div class="scam-alert-header">
+                                    <svg class="warning-icon" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                                    </svg>
+                                    SCAM CALL DETECTED
+                                </div>
+                            </div>
+                            
+                            <div class="scam-details">
+                                <div class="scam-type">
+                                    <div class="scam-type-label">Scam Type</div>
+                                    <div class="scam-type-value">IRS Impersonation Scam</div>
+                                </div>
+                                
+                                <div class="scam-amount">
+                                    <div class="scam-amount-label">Attempted Theft</div>
+                                    <div class="scam-amount-value">$2,847</div>
+                                </div>
+                                
+                                <div class="blocked-status">
+                                    <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    BLOCKED AUTOMATICALLY
+                                </div>
+                                
+                                <div class="call-support">
+                                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                    </svg>
+                                    Call Halo Line to Report
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="floating-benefits">
+                        <div class="benefit-card">
+                            <div class="amount">$2,400 saved</div>
+                            <div class="description">from wire scam</div>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="amount">iPad fixed</div>
+                            <div class="description">in 5 minutes</div>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="amount">47 scams blocked</div>
+                            <div class="description">this month</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Complete Protection & Support</h2>
+                <p>Everything your parents need to stay safe and confident with technology</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3>Scam Protection</h3>
+                    <p>Real-time monitoring and blocking of scam attempts. Our experts intercept dangerous calls before any damage occurs.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3>Tech Support</h3>
+                    <p>Patient, unlimited help with any device or technology question. From email to video calls, we handle it all.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8 16.25a.75.75 0 01.75-.75h2.5a.75.75 0 010 1.5h-2.5a.75.75 0 01-.75-.75z"/>
+                            <path fill-rule="evenodd" d="M5 4a3 3 0 013-3h4a3 3 0 013 3v12a3 3 0 01-3 3H8a3 3 0 01-3-3V4zm3-1h4a1 1 0 011 1v12a1 1 0 01-1 1H8a1 1 0 01-1-1V4a1 1 0 011-1z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3>Family Updates</h3>
+                    <p>Instant notifications when we help your parents or block a scam attempt. Stay informed without being involved.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3>Identity Protection</h3>
+                    <p>Proactive monitoring for identity theft and financial fraud. We catch problems before they become disasters.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v6H3a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2h-6V3a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3>Medical Scam Defense</h3>
+                    <p>Protection from Medicare fraud and fake health product scams targeting seniors.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                        </svg>
+                    </div>
+                    <h3>Family Portal</h3>
+                    <p>Secure dashboard to see all interactions, blocked threats, and your parents' tech support history.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple Setup, Immediate Protection</h2>
+                <p>Get your parents protected in minutes, not hours</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Quick Sign-Up</h3>
+                    <p>Enter your information and your parent's phone number. Takes less than 2 minutes.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>We Call Your Parents</h3>
+                    <p>Our onboarding specialist introduces the service and helps them save our number.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Instant Protection</h3>
+                    <p>Your parents can now call us anytime for help, and we monitor for scam attempts 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Common Questions</h2>
+                <p>Everything you need to know about protecting your parents</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What if my parents forget to call?</h3>
+                    <p>We proactively check in weekly and monitor their phone for scam patterns. Protection works even if they never call us.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do my parents need a smartphone?</h3>
+                    <p>No! Halo Line works with any phone - landline, flip phone, or smartphone. No apps or downloads required.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What are your hours?</h3>
+                    <p>We're launching with 9am-9pm coverage, expanding to 24/7 as we grow. Scam monitoring runs around the clock.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can you guarantee no scams?</h3>
+                    <p>While no service can prevent 100% of scams, we dramatically reduce risk and catch most attempts before any damage.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How fast is the refund process?</h3>
+                    <p>Cancel anytime within 30 days for a full refund. No questions asked, processed within 3-5 business days.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Who are your experts?</h3>
+                    <p>Former bank fraud investigators, elder care specialists, and patient tech support professionals trained in senior communication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Every day without protection is a risk</h2>
+            <p>Join thousands of families who sleep better at night</p>
+            <a href="#cta" class="cta-button">PROTECT MY PARENTS NOW</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Halo Line</div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2024 Halo Line. All rights reserved. | Founded by former bank fraud investigators.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form handling
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = document.querySelector('input[type="email"]').value;
+            if (email) {
+                this.textContent = 'SECURING YOUR SPOT...';
+                setTimeout(() => {
+                    this.textContent = 'WELCOME TO HALO LINE!';
+                    this.style.background = 'var(--green)';
+                }, 1500);
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Urgency countdown
+        let spots = 847;
+        setInterval(() => {
+            if (spots > 800 && Math.random() > 0.7) {
+                spots--;
+                document.querySelector('.urgency-badge').textContent = `Only ${spots} Early Access spots remaining`;
+            }
+        }, 30000);
+    </script>
+</body>
+</html>
