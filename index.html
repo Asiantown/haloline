@@ -71,7 +71,7 @@
 
         .nav-cta {
             background: #5046e5;
-            color: white;
+            color: white !important;
             padding: 12px 24px;
             border-radius: 8px;
             text-decoration: none;
@@ -508,35 +508,38 @@
         .issue-icon {
             width: 64px;
             height: 64px;
-            background: #ede9fe;
             border-radius: 16px;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            font-weight: 700;
-            color: #5046e5;
+            font-size: 24px;
+        }
+        
+        .issue-card:nth-child(1) .issue-icon {
+            background: #dbeafe;
+        }
+        
+        .issue-card:nth-child(2) .issue-icon {
+            background: #ede9fe;
+        }
+        
+        .issue-card:nth-child(3) .issue-icon {
+            background: #dcfce7;
         }
 
         .issue-card h3 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 12px;
-            color: #1a1f36;
-        }
-
-        .issue-quote {
-            font-style: italic;
-            color: #6b7280;
-            font-size: 15px;
             margin-bottom: 16px;
+            color: #1a1f36;
+            font-style: italic;
         }
 
         .issue-solution {
-            color: #5046e5;
-            font-weight: 600;
-            font-size: 14px;
+            color: #6b7280;
+            font-size: 15px;
+            line-height: 1.6;
         }
 
         /* How It Works */
@@ -767,7 +770,6 @@
             <div class="nav-links">
                 <a href="#issues">Common Issues</a>
                 <a href="#how">How it works</a>
-                <a href="#features">Features</a>
                 <a href="#faq">FAQ</a>
                 <a href="#" class="nav-cta">Join Waitlist</a>
             </div>
@@ -798,8 +800,9 @@
                     </div>
                     
                     <div class="waitlist-form">
-                        <form class="form-group">
-                            <input type="email" placeholder="Enter your email" required>
+                        <form class="form-group" action="https://formspree.io/f/mldlqnaj" method="POST">
+                            <input type="hidden" name="_next" value="http://localhost:8000/thank-you.html">
+                            <input type="email" name="email" placeholder="Enter your email" required>
                             <button type="submit">JOIN WAITLIST</button>
                         </form>
                         
@@ -876,30 +879,45 @@
     <section class="common-issues" id="issues">
         <div class="container">
             <div class="section-header">
-                <h2>The problems we solve every day</h2>
-                <p>Real issues your parents face, handled with patience and care.</p>
+                <h2>No More Panicked Calls From Dad About His Phone</h2>
+                <p>Your parents face these common tech frustrations. Instead of calling you during your workday, they get immediate, patient help from us.</p>
             </div>
             
             <div class="issues-grid">
                 <div class="issue-card">
-                    <div class="issue-icon">W</div>
-                    <h3>WiFi & Internet</h3>
-                    <p class="issue-quote">"The internet stopped working"</p>
-                    <p class="issue-solution">We'll restart routers, check connections, and get them back online</p>
+                    <div class="issue-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="14" width="3" height="6" rx="1" fill="#3B82F6"/>
+                            <rect x="8" y="11" width="3" height="9" rx="1" fill="#3B82F6"/>
+                            <rect x="12" y="8" width="3" height="12" rx="1" fill="#3B82F6"/>
+                            <rect x="16" y="5" width="3" height="15" rx="1" fill="#3B82F6"/>
+                        </svg>
+                    </div>
+                    <h3>"The internet stopped working"</h3>
+                    <p class="issue-solution">We guide them through router resets and connection troubleshooting to get them back online fast.</p>
                 </div>
                 
                 <div class="issue-card">
-                    <div class="issue-icon">TV</div>
-                    <h3>TV & Streaming</h3>
-                    <p class="issue-quote">"I can't find my shows"</p>
-                    <p class="issue-solution">Navigate channels, fix remotes, setup streaming apps</p>
+                    <div class="issue-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="7" width="18" height="12" rx="2" stroke="#8B5CF6" stroke-width="2"/>
+                            <path d="M17 2L12 7L7 2" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>"I can't find my shows"</h3>
+                    <p class="issue-solution">From Netflix navigation to remote control issues, we help them find their favorite entertainment.</p>
                 </div>
                 
                 <div class="issue-card">
-                    <div class="issue-icon">PW</div>
-                    <h3>Passwords & Accounts</h3>
-                    <p class="issue-quote">"It says my password is wrong"</p>
-                    <p class="issue-solution">Reset passwords, recover accounts, manage logins safely</p>
+                    <div class="issue-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="11" width="14" height="10" rx="2" stroke="#10B981" stroke-width="2"/>
+                            <path d="M7 11V7C7 4.79086 8.79086 3 11 3H13C15.2091 3 17 4.79086 17 7V11" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="12" cy="16" r="1" fill="#10B981"/>
+                        </svg>
+                    </div>
+                    <h3>"It says my password is wrong"</h3>
+                    <p class="issue-solution">We provide secure password resets and account recovery for email, social media, and more.</p>
                 </div>
             </div>
         </div>
@@ -909,7 +927,7 @@
     <section class="how-it-works" id="how">
         <div class="container">
             <div class="section-header">
-                <h2>Simpler than teaching them to text</h2>
+                <h2>A Simple Call. A Word of Reassurance</h2>
             </div>
             
             <div class="steps">
@@ -934,79 +952,33 @@
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>Complete tech support, not just another app</h2>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">01</div>
-                    <h4>24/7 Tech Help</h4>
-                    <p>WiFi, TV, devices, printers - we handle it all</p>
-                </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">02</div>
-                    <h4>Scam Protection</h4>
-                    <p>Verify suspicious calls in real-time</p>
-                </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">03</div>
-                    <h4>Password Management</h4>
-                    <p>Secure help with forgotten passwords</p>
-                </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">04</div>
-                    <h4>Patient Experts</h4>
-                    <p>Trained to work with seniors</p>
-                </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">05</div>
-                    <h4>Family Dashboard</h4>
-                    <p>See all support interactions</p>
-                </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">06</div>
-                    <h4>No Apps Required</h4>
-                    <p>Just one phone number to remember</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
             <div class="section-header">
-                <h2>Questions from adult children like you</h2>
+                <h2>Your questions, answered.</h2>
             </div>
             
             <div class="faq-grid">
                 <div class="faq-item">
                     <h3>What tech problems do you actually solve?</h3>
-                    <p>Everything from WiFi and TV issues to email problems, password resets, printer setup, video calls, and suspicious call verification. If it plugs in or connects, we help.</p>
+                    <p>Essentially, everything. From WiFi and TV issues to printer problems, video call setups, and device troubleshooting. If it has a screen or a plug, we can help.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>How is this different from calling me?</h3>
-                    <p>We're available 24/7, trained in elder tech support, and infinitely patient. You get your time back, they get immediate help.</p>
+                    <h3>How is this different from my parents just calling me?</h3>
+                    <p>We're available 24/7, have unlimited patience, and are trained specifically for this. It gives you back your time and lets you be their child, not their IT support.</p>
                 </div>
                 
                 <div class="faq-item">
                     <h3>Will my parents actually use this?</h3>
-                    <p>Yes. It's just a phone call - the one thing they already know how to do. No apps, no passwords.</p>
+                    <p>Absolutely. We designed it around the one piece of technology they're already comfortable with: the phone. No apps, no new interfaces to learn. Just a simple call.</p>
                 </div>
                 
                 <div class="faq-item">
                     <h3>What about scam calls?</h3>
-                    <p>We verify suspicious calls in real-time and block scams before damage occurs. It's protection built into the service.</p>
+                    <p>Scam protection is a core feature. We can verify suspicious callers and provide proactive guidance on avoiding common scams targeting seniors, offering an extra layer of security.</p>
                 </div>
             </div>
         </div>
@@ -1015,12 +987,13 @@
     <!-- Final CTA -->
     <section class="final-cta">
         <div class="container">
-            <h2>Stop being the family IT department.</h2>
+            <h2>For Every 'Can You Help Me With This?' — There's Us</h2>
             <p>Join the waitlist and be first to know when we launch.</p>
             
             <div class="final-form">
-                <form class="form-group">
-                    <input type="email" placeholder="Enter your email" required style="background: white; color: #1a1f36;">
+                <form class="form-group" action="https://formspree.io/f/mldlqnaj" method="POST">
+                    <input type="hidden" name="_next" value="https://haloline.com/thank-you.html">
+                    <input type="email" name="email" placeholder="Enter your email" required style="background: white; color: #1a1f36;">
                     <button type="submit">JOIN WAITLIST</button>
                 </form>
             </div>
@@ -1037,7 +1010,7 @@
                 <a href="#">Terms</a>
             </div>
             <div class="footer-disclaimer">
-                Halo Line is not a 911 or emergency service. © 2024 Halo Line Inc.
+                Halo Line is not a 911 or emergency service. © 2025 Halo Line Inc.
             </div>
         </div>
     </footer>
