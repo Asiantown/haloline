@@ -850,8 +850,83 @@
                 display: none;
             }
 
+            .hero {
+                padding: 60px 0 40px;
+                min-height: auto;
+            }
+
             .hero-text h1 {
-                font-size: 36px;
+                font-size: 28px;
+                line-height: 1.2;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .hero-benefits {
+                margin-bottom: 24px;
+            }
+
+            .benefit-item {
+                font-size: 14px;
+            }
+
+            .waitlist-form {
+                margin-bottom: 30px;
+            }
+
+            .phone-visual {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .image-container {
+                max-width: 100%;
+                height: 250px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .hero-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center 20%;
+            }
+
+            .conversation-bubbles {
+                top: 6px;
+                left: 6px;
+                right: 6px;
+                gap: 4px;
+            }
+
+            .bubble {
+                font-size: 9px;
+                padding: 5px 8px;
+                max-width: 160px;
+                line-height: 1.3;
+                border-radius: 12px;
+            }
+
+            .bubble-customer {
+                margin-left: 6px;
+            }
+
+            .scam-blocked-badge {
+                bottom: 8px;
+                right: 8px;
+                padding: 5px 8px;
+                font-size: 10px;
+                gap: 4px;
+                border-radius: 8px;
+            }
+
+            .scam-blocked-badge svg {
+                width: 10px;
+                height: 10px;
             }
 
             .steps {
@@ -866,9 +941,53 @@
                 grid-template-columns: 1fr;
             }
 
-            .phone-device {
-                width: 320px;
-                height: 640px;
+            .form-group {
+                flex-direction: column;
+            }
+
+            .form-group input {
+                width: 100%;
+            }
+
+            .form-group button {
+                width: 100%;
+            }
+
+            .form-meta {
+                flex-wrap: wrap;
+                font-size: 11px;
+                justify-content: center;
+                gap: 6px;
+            }
+
+            .section-header h2 {
+                font-size: 26px;
+            }
+
+            .section-header p {
+                font-size: 15px;
+            }
+
+            .issues-grid {
+                gap: 16px;
+            }
+
+            .issue-card {
+                padding: 20px;
+            }
+
+            .issue-icon {
+                width: 48px;
+                height: 48px;
+                margin-bottom: 16px;
+            }
+
+            .issue-card h3 {
+                font-size: 16px;
+            }
+
+            .issue-solution {
+                font-size: 14px;
             }
         }
     </style>
@@ -938,10 +1057,10 @@
                                 "Hi, I'm Jim from HaloLine. How can I help you today?"
                             </div>
                             <div class="bubble bubble-customer">
-                                "Hi Jim, this is Margaret. Someone called saying they're from my bank asking me to login. I almost did it but I'm not sure if it's suspicious."
+                                "Hi Jim, this is Margaret. Someone called from my bank asking me to login."
                             </div>
                             <div class="bubble bubble-agent">
-                                "Margaret, banks never ask for login info. I'm calling your bank now to verify. Please don't proceed - this is definitely a scam."
+                                "Margaret, banks never ask for login info. I'm calling your bank to verify. Please don't proceed."
                             </div>
                         </div>
                         
